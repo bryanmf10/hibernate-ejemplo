@@ -10,12 +10,18 @@ public class OperacionesHIbernateJPA {
         personaDao.listar();
 
         Persona persona = new Persona();
-        persona.setNombre("Carlos");
-        persona.setApellido("Lara");
-        persona.setEmail("clara@mail.com");
-        persona.setTelefono("65654658");
+        persona.setIdPersona(4);
+        
+        persona = personaDao.buscarPersonaPorId(persona);//
+        System.out.println("persona encontrada =" + persona);
+        persona.setNombre("Juana");
+        persona.setApellido("Robles");
+        persona.setEmail("jrobles@mail.com");
+        //persona.setTelefono("65654658");
 
-        personaDao.insertar(persona);
+        //personaDao.insertar(persona);
+        personaDao.modificar(persona);
+        personaDao.listar();
 
     }
 

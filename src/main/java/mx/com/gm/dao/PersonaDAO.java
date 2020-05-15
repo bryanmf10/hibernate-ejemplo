@@ -32,13 +32,34 @@ public class PersonaDAO {
             em.getTransaction().rollback();
         }
         
-        finally{
-            if(em != null){
-                em.close();
-            }
-            
+//        finally{
+//             if(em != null){
+//                em.close();
+//            }
+//        }
+        
+    }
+    
+    public void modificar(Persona persona){
+         try{
+            em.getTransaction().begin();
+            em.merge(persona);//Actuliza el valor de la base de datos
+            em.getTransaction().commit();
+        }catch (Exception ex){
+            ex.printStackTrace(System.out);
+            em.getTransaction().rollback();
         }
         
+//        finally{
+//             if(em != null){
+//                em.close();
+//            }
+//        }
+
+    }
+    
+    public Persona buscarPersonaPorId(Persona p){
+        return em.find(Persona.class, p.getIdPersona());
     }
     
 }
