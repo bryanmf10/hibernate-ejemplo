@@ -32,6 +32,13 @@ public class PersonaDAO {
             em.getTransaction().rollback();
         }
         
+        finally{
+            if(em != null){
+                em.close();
+            }
+            
+        }
+        
     }
     
 }
