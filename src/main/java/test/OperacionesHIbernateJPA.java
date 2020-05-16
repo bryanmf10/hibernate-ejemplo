@@ -14,13 +14,16 @@ public class OperacionesHIbernateJPA {
         
         persona = personaDao.buscarPersonaPorId(persona);//
         System.out.println("persona encontrada =" + persona);
-        persona.setNombre("Juana");
-        persona.setApellido("Robles");
-        persona.setEmail("jrobles@mail.com");
+        
+//        persona.setNombre("Juana");
+//        persona.setApellido("Robles");
+//        persona.setEmail("jrobles@mail.com");
         //persona.setTelefono("65654658");
 
         //personaDao.insertar(persona);
-        personaDao.modificar(persona);
+//        personaDao.modificar(persona);
+
+        personaDao.eliminar(persona);
         personaDao.listar();
 
     }
